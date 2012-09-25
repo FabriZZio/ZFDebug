@@ -151,7 +151,12 @@ class ZFDebug_Controller_Plugin_Debug_Plugin_Doctrine2
 
             $queries .= "<tr>\n<td style='text-align:right;padding-right:2em;' nowrap>\n"
                                . sprintf('%0.2f', round($query['executionMS']*1000, 2))
-                               . "ms</td>\n<td>";
+                               . "ms</td>";
+
+            $queries .= "\n<td style='text-align:right;padding-right:2em;' nowrap>\n"
+                . $query['code']
+                . "</td>\n<td>";
+
             $params = array();
             if(!empty($query['params'])) {
               $params = $query['params'];

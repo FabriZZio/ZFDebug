@@ -153,9 +153,11 @@ class ZFDebug_Controller_Plugin_Debug_Plugin_Doctrine2
                                . sprintf('%0.2f', round($query['executionMS']*1000, 2))
                                . "ms</td>";
 
-            $queries .= "\n<td style='text-align:right;padding-right:2em;' nowrap>\n"
-                . $query['code']
-                . "</td>\n<td>";
+            if(array_key_exists('code', $query)) {
+                $queries .= "\n<td style='text-align:right;padding-right:2em;' nowrap>\n"
+                    . $query['code']
+                    . "</td>\n<td>";
+            }
 
             $params = array();
             if(!empty($query['params'])) {

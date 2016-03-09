@@ -1,0 +1,9 @@
+
+{
+    "name": "fabrizzio/zfdebug",
+    "autoload": {
+        "classmap": [
+            "library/"
+        ]
+    }
+}
